@@ -3,16 +3,32 @@
 [![](https://img.shields.io/badge/Open_in_DevExpress_Support_Center-FF7200?style=flat-square&logo=DevExpress&logoColor=white)](https://supportcenter.devexpress.com/ticket/details/E3665)
 [![](https://img.shields.io/badge/📖_How_to_use_DevExpress_Examples-e9f6fc?style=flat-square)](https://docs.devexpress.com/GeneralInformation/403183)
 <!-- default badges end -->
-# How to customize copy and paste commands
+# How to: Customize Copy and Paste Commands
 
+This example illustrates how to use the [IRichEditCommandFactoryService](https://docs.devexpress.com/OfficeFileAPI/DevExpress.XtraRichEdit.Services.IRichEditCommandFactoryService) service substitution to override <code>CopySelectionCommand</code> and <code>PasteSelectionCommand</code> behavior.
 
-<p>This example illustrates how to override <strong>CopySelectionCommand</strong> and <strong>PasteSelectionCommand</strong> behavior via the <strong>IRichEditCommandFactoryService</strong> substitution. This approach is based on the <a href="https://www.devexpress.com/Support/Center/p/E2224">How to replace standard XtraRichEdit command with your own custom command</a> example.</p><p>Customized <strong>CopySelectionCommand </strong>contains code for copying selection to the <a href="http://msdn.microsoft.com/en-us/library/system.windows.clipboard.aspx"><u>Clipboard</u></a> in an <a href="http://msdn.microsoft.com/en-us/library/aa767917(v=vs.85).aspx"><u>HTML Clipboard Format</u></a> (see the <strong>HtmlHelper.GetHtmlClipboardFormat()</strong> method). This allows you to copy RichEditControl content and paste it directly to a certain control that can accept HTML-formatted data from the Clipboard (e. g. <a href="http://documentation.devexpress.com/#AspNet/clsDevExpressWebASPxHtmlEditorASPxHtmlEditortopic"><u>ASPxHtmlEditor</u></a>). Note that images are embedded into resultant HTML according to the <a href="http://en.wikipedia.org/wiki/Data_URI_scheme"><u>Data URI scheme</u></a> specification to avoid dependency on the image location (it may not be resolved by the target application). Please note that RichEditControl supports copying data in the HTML Clipboard format in <strong>v20.2.5</strong> and newer versions. To enable this functionality, use the <a href="https://docs.devexpress.com/OfficeFileAPI/DevExpress.XtraRichEdit.DataFormatOptions.AllowHtml"><u>ClipboardFormats.AllowHtml</u></a> option.
+## Implementation Details
+
+Customized <code>CopySelectionCommand</code> copies selection to the [Clipboard](https://learn.microsoft.com/en-us/dotnet/api/system.windows.clipboard) in [HTML Clipboard Format](https://learn.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/platform-apis/aa767917(v=vs.85)) (see the <code>HtmlHelper.GetHtmlClipboardFormat()</code> method). This allows you to copy the RichEditControl content and paste it directly to a control that can accept HTML-formatted data from the Clipboard (e. g. [ASPxHtmlEditor](https://docs.devexpress.com/AspNet/DevExpress.Web.ASPxHtmlEditor.ASPxHtmlEditor)). Note that images are embedded into the resulting HTML according to the [Data URI scheme](http://en.wikipedia.org/wiki/Data_URI_scheme) specification to avoid dependency on the image location (it may not be resolved by the target application).
+
+> **Note:**
+>
+> Starting with **v20.2.5**, RichEditControl supports copying data in the HTML Clipboard format. To enable this functionality, use the [ClipboardFormats.Html](https://docs.devexpress.com/OfficeFileAPI/DevExpress.XtraRichEdit.DataFormatOptions.Html) option.
   
-<p>As for customized <strong>PasteSelectionCommand</strong>, it simply retrieves plain (unformatted) text from the Clipboard and pastes this text into the RichEditControl.</p><p><strong>See Also:</strong><br />
-<a href="http://documentation.devexpress.com/#CoreLibraries/DevExpressXtraRichEditAPINativeSubDocument_GetTexttopic"><u>SubDocument.GetText Method</u></a><br />
-<a href="http://documentation.devexpress.com/#CoreLibraries/DevExpressXtraRichEditAPINativeSubDocument_GetRtfTexttopic"><u>SubDocument.GetRtfText Method</u></a><br />
-<a href="http://documentation.devexpress.com/#CoreLibraries/DevExpressXtraRichEditAPINativeSubDocument_GetHtmlTexttopic"><u>SubDocument.GetHtmlText Method</u></a></p>
+The customized <code>PasteSelectionCommand</code> retrieves plain (unformatted) text from the Clipboard and pastes this text into the RichEditControl.
 
-<br/>
+## Files to Review
 
+* [Form1.cs](./CS/RichEditCustomCopyPaste/Form1.cs) (VB: [Form1.vb](./vb/Form1.vb))
+* [CustomCommands.cs](./CS/RichEditCustomCopyPaste/CustomCommands.cs) (VB: [CustomCommands.vb](./vb/CustomCommands.vb))
+* [HtmlRelatedClasses.cs](./cs/RichEditCustomCopyPaste/HtmlRelatedClasses.cs) (VB: [HtmlRelatedClasses.vb](./VB/HtmlRelatedClasses.vb))
 
+## More Examples
+
+* [How to replace standard XtraRichEdit command with a custom command](https://github.com/DevExpress-Examples/how-to-replace-standard-xtrarichedit-command-with-your-own-custom-command-e2224)
+
+## Documentation
+
+* [Commands in Rich Text Editor](https://docs.devexpress.com/WindowsForms/9328/controls-and-libraries/rich-text-editor/commands)
+* [How to: Bind a Command to a Button in the Rich Text Editor for WinForms](https://docs.devexpress.com/WindowsForms/7071/controls-and-libraries/rich-text-editor/examples/commands/how-to-bind-a-command-to-a-button)
+* [How to: Replace a Built-In Command with a Custom Command in Rich Text Editor for WinForms](https://docs.devexpress.com/WindowsForms/113758/controls-and-libraries/rich-text-editor/examples/commands/how-to-customize-built-in-command-using-service-substitution)
