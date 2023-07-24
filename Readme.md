@@ -19,9 +19,9 @@ The customized <code>PasteSelectionCommand</code> retrieves plain (unformatted) 
 
 ## Files to Review
 
-* [Form1.cs](./CS/RichEditCustomCopyPaste/Form1.cs) (VB: [Form1.vb](./vb/Form1.vb))
-* [CustomCommands.cs](./CS/RichEditCustomCopyPaste/CustomCommands.cs) (VB: [CustomCommands.vb](./vb/CustomCommands.vb))
-* [HtmlRelatedClasses.cs](./cs/RichEditCustomCopyPaste/HtmlRelatedClasses.cs) (VB: [HtmlRelatedClasses.vb](./VB/HtmlRelatedClasses.vb))
+* [Form1.cs](./CS/RichEditCustomCopyPaste/Form1.cs) (VB: [Form1.vb](./VB/Form1.vb))
+* [CustomCommands.cs](./CS/RichEditCustomCopyPaste/CustomCommands.cs) (VB: [CustomCommands.vb](./VB/CustomCommands.vb))
+* [HtmlRelatedClasses.cs](./CS/RichEditCustomCopyPaste/HtmlRelatedClasses.cs) (VB: [HtmlRelatedClasses.vb](./VB/HtmlRelatedClasses.vb))
 
 ## More Examples
 
