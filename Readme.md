@@ -34,7 +34,7 @@ The customized <code>PasteSelectionCommand</code> retrieves plain (unformatted) 
 * [How to: Bind a Command to a Button in the Rich Text Editor for WinForms](https://docs.devexpress.com/WindowsForms/7071/controls-and-libraries/rich-text-editor/examples/commands/how-to-bind-a-command-to-a-button)
 * [How to: Replace a Built-In Command with a Custom Command in Rich Text Editor for WinForms](https://docs.devexpress.com/WindowsForms/113758/controls-and-libraries/rich-text-editor/examples/commands/how-to-customize-built-in-command-using-service-substitution)
 <!-- feedback -->
-## Does this example address your development requirements/objectives?
+## Does This Example Address Your Development Requirements/Objectives?
 
 [<img src="https://www.devexpress.com/support/examples/i/yes-button.svg"/>](https://www.devexpress.com/support/examples/survey.xml?utm_source=github&utm_campaign=how-to-customize-copy-and-paste-commands&~~~was_helpful=yes) [<img src="https://www.devexpress.com/support/examples/i/no-button.svg"/>](https://www.devexpress.com/support/examples/survey.xml?utm_source=github&utm_campaign=how-to-customize-copy-and-paste-commands&~~~was_helpful=no)
 
